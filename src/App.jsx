@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import MainLayout from "./layouts/MainLayout";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       children: [
         {
           index:true,
-          element: <div>home</div>,
+          Component:Home
         },
         {
           path: "/about",
