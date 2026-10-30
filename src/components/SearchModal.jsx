@@ -1,6 +1,6 @@
 import { AlertCircle, CloudSun, MapPin, Navigation, Search, X } from 'lucide-react';
 import { useState } from 'react';
-import { getGeoLocations } from '../actions/getGeocoding';
+import { getGeoLocation,  } from '../actions/getGeocoding';
 import { useNavigate } from 'react-router';
 
 const SearchModal = ({ onClose }) => {
@@ -15,12 +15,6 @@ const SearchModal = ({ onClose }) => {
 
     }
 
-    // "Failed to fetch location data"
-    // "City not found. Please check the city name."
-    // 
-    // 
-    // "Failed to fetch weather data."
-    // "Unable to retrieve weather information. Please try again."
 
     const handleSearch = async (e) => {
         e.preventDefault()
@@ -35,7 +29,7 @@ const SearchModal = ({ onClose }) => {
         }
 
         try {
-            const location = await getGeoLocations(cityValue)
+            const location = await getGeoLocation(cityValue)
             if (!location) {
 
                 setError("Unable to find the requested location.")
@@ -73,7 +67,6 @@ const SearchModal = ({ onClose }) => {
         })
 
     }
-
 
 
     return (
@@ -117,7 +110,6 @@ const SearchModal = ({ onClose }) => {
                     {/* showing Error */}
                     {error && (
                         <div
-                            role="alert"
                             className="mb-5 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 shadow-sm animate-in fade-in slide-in-from-top-2 duration-300"
                         >
                             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600">
