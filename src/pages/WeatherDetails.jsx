@@ -1,4 +1,5 @@
 import { Droplets, Wind, Gauge } from "lucide-react";
+import { useLocation } from "react-router";
 
 const details = [
   {
@@ -19,6 +20,11 @@ const details = [
 ];
 
 export default function WeatherDetails() {
+
+  const l = useLocation()
+
+  console.log(l)
+
   return (
     <div className="grid grid-cols-3 gap-4">
       {details.map(({ label, value, icon: Icon }) => (

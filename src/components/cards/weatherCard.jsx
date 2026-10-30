@@ -1,5 +1,5 @@
 import { CloudSun, MapPin, ChevronDown } from "lucide-react";
-import WeatherDetails from "../WeatherDetails";
+import WeatherDetails from "../../pages/WeatherDetails";
 
 export default function WeatherCard({ weather }) {
   return (

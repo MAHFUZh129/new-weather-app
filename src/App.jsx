@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
+import WeatherDetails from "./pages/WeatherDetails";
 
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
         {
           path: "/about",
           element: <div>about</div>,
+        },
+        {
+          path: "/weather",
+          Component:WeatherDetails,
         },
       ]
     },
