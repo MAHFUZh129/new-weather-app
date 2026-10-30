@@ -32,7 +32,7 @@ export default function WeatherCard({ weather }) {
         </div>
       </div>
 
-      <WeatherDetails />
+      {/* <WeatherDetails /> */}
     </div>
   );
 }

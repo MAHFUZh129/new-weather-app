@@ -1,6 +1,6 @@
 import { AlertCircle, CloudSun, MapPin, Navigation, Search, X } from 'lucide-react';
 import { useState } from 'react';
-import { getGeoLocation,  } from '../actions/getGeocoding';
+import { getGeoLocation, } from '../actions/getGeocoding';
 import { useNavigate } from 'react-router';
 
 const SearchModal = ({ onClose }) => {
@@ -51,6 +51,11 @@ const SearchModal = ({ onClose }) => {
     const handleCurrentLocation = () => {
 
         setError('')
+        
+        if (!navigator.geolocation) {
+            setError('Geolocation is not supported by your browser.')
+            return
+        }
 
         navigator.geolocation.getCurrentPosition((p) => {
             const { latitude, longitude } = p.coords
